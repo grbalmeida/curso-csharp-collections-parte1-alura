@@ -61,6 +61,24 @@ namespace Dicionarios
                 // The given key was not present in the dictionary.
             }
 
+            // E se tentarmos adicionar outro aluno com a mesma chave 5617?
+            Aluno fabio = new Aluno("Fabio Gushiken", 5617);
+            
+            try
+            {
+                csharpColecoes.Matricula(fabio);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+                // An item with the same key has already been added.
+            }
+
+            csharpColecoes.SubstituiAluno(fabio);
+
+            Console.WriteLine("Quem é o Aluno 5617 agora?");
+            Console.WriteLine(csharpColecoes.BuscaMatriculado(5617));
+
             Console.ReadLine();
         }
     }

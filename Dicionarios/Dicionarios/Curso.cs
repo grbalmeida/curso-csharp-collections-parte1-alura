@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -65,6 +66,11 @@ namespace Dicionarios
             dicionarioAlunos.TryGetValue(numeroMatricula, out Aluno aluno);
 
             return aluno;
+        }
+
+        public void SubstituiAluno(Aluno aluno)
+        {
+            dicionarioAlunos[aluno.NumeroMatricula] = aluno;
         }
     }
 }
